@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+		<title>Hotel Amenity Selection</title>
+</head>
+
+<body>
+	<p>Select extra hotel amenities</p>
+<form name="frmAmenities" action="serverCode/calcOptions.php" method="get">
+	<input type="checkbox" name="chkFeatures[]" value="50">Wet Bar<br>
+	<input type="checkbox" name="chkFeatures[]" value="25">Jacuzzi<br>
+	<input type="checkbox" name="chkFeatures[]" value="15">Brunch Service<br>
+	<input type="checkbox" name="chkFeatures[]" value="10">Towel Service<br>
+	<input type="checkbox" name="chkFeatures[]" value="5">Unlimited Internet Access
+	
+	<p><input type="submit" id="btnCalc" name="btnCalc" value="Calc Total"></p>
+</form>
+	
+	
+</body>
+
+</html>

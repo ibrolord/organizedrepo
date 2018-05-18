@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Arrays</title>
+		<link rel='stylesheet' type='text/css' href='css/tableStyle.css'>
+	</head>
+<body>
+	<h1>What's your favourite colour?</h1>
+	<form name="frmArrayDemo" action="servercode/display.php" method="get">
+			<div class="row">
+				<div class="cell">My colour:</div>
+				<div class="cell">	
+					<input type="checkbox" name="chkColour[]" id="chkColour" value="Red">Red
+					<input type="checkbox" name="chkColour[]" id="chkColour" value="Blue">Blue
+					<input type="checkbox" name="chkColour[]" id="chkColour" value="green">Green		
+				</div>
+			</div>
+			<div class="row">
+			<div class="cell">	
+					<input type="submit" name="btnSubmit" id="btnSubmit" value="Add">		
+			</div>
+			</div>
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Student Survey</title>
+	<style type="text/css">
+    		fieldset{
+         		width: 50%;
+    		}
+	</style>
+</head>
+<body>
+<form id="frmSurvey" action="serverCode/SurveyConf.php" method="get">
+	<fieldset>
+		<legend>Personal Information</legend>
+		<label>Student</label>
+		<input type="text" id="txtName" name="txtName" autofocus>
+		<label>Email </label>
+		<input type="email" id="txtEmail" name="txtEmail"><br>
+		<label>Cell No</label>
+		<input type="text" id="txtPhone" name="txtPhone" placeholder="999-999-9999">
+	</fieldset>
+
+	<fieldset>
+		<legend>Classification</legend>
+		<input type="radio" id="radCP" name="radProg" value="CP">Computer Programmer<br>
+		<input type="radio" id="radCPA" name="radProg" value="CPA">Computer Programmer/Analyst<br>
+		<input type="radio" id="radNMWD" name="radProg" value="NMWD">New Media Web Design<br>
+		<input type="radio" id="radGame" name="radProg" value="GAME">Game Development<br>
+		<input type="radio" id="radCST" name="radProg" value="CST">Computer Systems Technician
+	</fieldset>
+
+	<fieldset>
+		<legend>Current Term</legend>
+		<select name="cboTerm" id="cboTerm" size="4">
+			<option value="1">Term 1</option>
+			<option value="2" selected="selected">Term 2</option>
+			<option value="3">Term 3</option>
+			<option value="4">Term 4</option>
+		</select>
+	</fieldset>
+
+	<fieldset>
+		<legend>Interests</legend>
+		<input type="checkbox" name="chkInterest" id="chkProg" value="Programming">Programming<br>
+		<input type="checkbox" name="chkInterest" id="chkDB" value="Database">Database<br>
+		<input type="checkbox" name="chkInterest" id="chkDesign" value="Design">Web Design<br>
+		<input type="checkbox" name="chkInterest" id="chkMedia" value="FlashGraphics">Flash and Graphics
+	</fieldset>
+	
+	<input type="submit" name="btnSubmit" id="btnSubmit" value="Enter Information">
+	<input type="reset" name="btnReset" id="btnReset">
+</form>
+
+</body>
+</html>

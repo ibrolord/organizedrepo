@@ -1,0 +1,18 @@
+.table
+{
+	display: table;
+}
+.row
+{
+	display: table-row;
+	height: 30px;
+}
+.cell
+{
+	display: table-cell;
+	border: solid;
+	border-width: thin;
+	padding-left: 5px;
+	padding-right: 5px;	
+    	vertical-align: middle;
+}

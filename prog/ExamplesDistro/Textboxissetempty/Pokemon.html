@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Html Practice: Pokemon</title>
+		<link rel='stylesheet' type='text/css' href='css/tableStyle.css'>
+	</head>
+<body>
+	<h1>Enter Pokemon Information</h1>
+	<form name="frmPokemon" action="servercode/diplay.php" method="get">
+		
+		<div class="table">
+			<div class="row">
+				<div class="cell">Pokedex #</div>
+				<div class="cell"><input type="text" name="txtPDexNo" id="txtPDexNo" size="3"  autofocus></div>
+			</div>
+			<div class="row">
+				<div class="cell">Name:</div>
+				<div class="cell"><input type="text" name="txtPName" id="txtPName" ></div>
+			</div>
+			<div class="row">
+				<div class="cell">Weight:</div>
+				<div class="cell"><input type="text" name="txtPWeight" id="txtPWeight" size="5"></div>
+			</div>
+			<div class="row">
+				<div class="cell">Height:</div>
+				<div class="cell"><input type="text" name="txtPHeight" id="txtPHeight" size="5"></div>
+			</div>
+			<div class="row">
+				<div class="cell">Image:</div>
+				<div class="cell"><input type="file" name="filePImage" id="filePImage"></div>
+			</div>		
+
+			<div class="row">
+				<div class="cell">Type:</div>
+				<div class="cell">				
+					<select name="cboType" id="cboType">
+						<option value = "0">Select a Type</value>
+						<option value = "1">Bug</value>
+						<option value = "2">Dragon</value>
+						<option value = "3">Electric</value>
+						<option value = "4">Fighting</value>
+						<option value = "5">Fire</value>
+						<option value = "6">Flying</value>
+						<option value = "7">Grass</value>
+						<option value = "8">Ground</value>
+						<option value = "9">Water</value>
+						<option value = "10">Normal</value>
+					</select>
+				</div>
+			</div>	
+			
+			<div class="row">
+				<div class="cell">Type Classification:</div>
+				<div class="cell">
+					<input type="radio" name="radTClass" id="radTClass1" value="Pure">Pure
+					<input type="radio" name="radTClass" id="radTClass2" value="Primary" checked>Primary
+					<input type="radio" name="radTClass" id="radTClass3" value="Secondary">Secondary				
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="cell">Add to my:</div>
+				<div class="cell">	
+					<input type="checkbox" name="chkAddTo" id="chkAddTo" value="Favorites">Favourites
+					<input type="checkbox" name="chkAddTo" id="chkAddTo" value="Trade List">Trade list
+					<input type="checkbox" name="chkAddTo" id="chkAddTo" value="Collection">Collection		
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="cell"></div>
+				<div class="cell">	
+					<input type="submit" name="btnSubmit" id="btnSubmit" value="Add">		
+				</div>
+			</div>
+			
+		</div>
+	</form>
+	
+</body>
+</html>

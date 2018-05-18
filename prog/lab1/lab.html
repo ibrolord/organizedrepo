@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<style>
+		
+		</style>
+	</head>
+	<body>
+		<?php
+$drop = $_POST['drop'];
+$ship = $_POST[''];
+
+if(isset($_POST["submit"])){
+
+if(empty($_POST['check'])){
+echo "required";
+}
+
+else {
+    $price = $_POST["check"];
+    $c = count($price);
+    $cost = "";
+
+for($i=0;$i<$c;$i++){
+if($price[$i] == 120){
+$cost =+ 120;
+}
+
+if($price[$i] == 300){
+$cost =+ 300;
+}
+
+if($price[$i] == 80){
+$cost =+ 80;
+}
+
+if($price[$i] == 75){
+$cost =+ 75;
+}
+
+
+}
+
+
+}
+
+	
+}
+		?>
+		
+		
+		
+		
+		
+		<p> Please send me </p>
+<!-- <form action="<?php $_SERVER['PHP_SELF'] ;?> >" method="post" > -->
+<form action="<?php $_SERVER['PHP_SELF'] ;?> >" method="post" > 
+			<input type="checkbox" value="120" name="check[]" id="check"> Mask  <br>
+			<input type="checkbox" value="120" name="check[]" id="comb"> Assault Vest <br>  
+			<input type="checkbox" value="300" name="check[]" id="paint"> Combat Pistol <br>
+		    <input type="checkbox" value="80" name="check[]" id="case"> Paintball <br>
+			<input type="checkbox" value="75" name="check[]" id="case">
+Case of 2000 Paintballs <br><br>
+		
+		
+		Shipping Method    <input type = "radio" value="0" name="ship" checked="checked" id="reg"> Regular
+			<input type = "radio" value="5" name="ship" id="reg"> Registered
+		   <input type = "radio" value="10" name="ship" id="exp"> Expedited
+		<br><br>
+Currency <select name="drop" id="drop">
+  <option value="CDN">Canadian</option>
+  <option value="GPB">British Pounds</option>
+  <option value="USD">United States Dollar</option>
+</select>
+<br><br>
+		<input type="submit" value="Order" name="submit" id="submit">
+		</form>
+				
+	</body>
+	
+</html>
+
+
+
+		
+<?php
+
+
+	if(isset($drop) && $drop == "cdn")	{
+		
+		echo "The following order have been calculated in CDN";
+		echo "<br><ul>
+		<li> Total for ordering $c items = $cost</li>
+		<li> Your shipping will cost </li>
+		";
+	}
+	
+	elseif (isset($drop) && $drop == "usd"){
+			$conv = $cost * 0.74;
+			echo "The following order have been calculated in USD";
+		echo "<br><ul>
+		<li> Total for ordering $c items = $conv</li>
+		<li> Your shipping will cost </li>
+		";
+	}
+	
+	else {
+		$conv = $cost * 0.61;
+			echo "The following order have been calculated in Pounds";
+		echo "<br><ul>
+		<li> Total for ordering $c items = $conv </li>
+		<li> Your shipping will cost </li>
+		";
+	}	
+
+
+
+
+?>
