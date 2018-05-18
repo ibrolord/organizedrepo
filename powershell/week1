@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Niagara College Canada</title>
+
+<link href="css/001GlobalReset.css" type="text/css" rel="stylesheet" />
+<link href="css/002CollegeBranding.css" type="text/css" rel="stylesheet" />
+<link href="css/020Streaming.css" type="text/css" rel="stylesheet" />
+<link href="video-js/video-js.css" rel="stylesheet">
+
+<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="video-js/video.js"></script>
+
+<script type="text/javascript">
+<!--
+
+	videojs.options.flash.swf = "video-js/video-js.swf"
+	
+	$(document).ready(function(){
+
+		var strVideo = getParameterByName('v');
+	
+		if(strVideo != '') {
+		
+			$(".uploader_window").hide();
+			$(".player_window").show();
+			
+			generateVideoURL(strVideo);
+			
+		} else {
+		
+			$(".uploader_window").show();
+			$(".player_window").hide();
+			
+		}
+
+	});
+	
+	function getParameterByName(name) {
+		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+			results = regex.exec(location.search);
+		return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+	
+	function generateVideoURL(strVideo) {
+		
+		var hostName = window.location.hostname;
+		var portNum = window.location.port.toString();
+		if(hostName.length > 0)
+		{
+			hostName = "http://" + hostName;
+			if (portNum.length > 0) 
+				hostName += ":" + portNum;
+		}
+		else
+		{
+			hostName = "http://localhost";
+			if (portNum.length > 0) 
+				hostName += ":" + portNum;
+		}
+		
+		var re = /(?:\.([^.]+))?$/;
+		var ext = re.exec(strVideo)[1];
+		var myPlayer = videojs('niagaraPlayer');
+		
+		//Check if an extension for the file name is present
+		if (!ext) {
+			//Assume FLV file
+			myPlayer.src({"type":"video/flv", "src":"" + hostName + "/vod/" + strVideo + ".flv"});
+		} else {
+			myPlayer.src({"type":"video/" + ext, "src":"" + hostName + "/vod/" + strVideo});
+		}
+		
+	}
+	
+//-->
+</script>
+
+</head>
+<body>
+
+	<div class="brandHeader">
+		<div class="brandHeaderLogo">
+			<a href="http://www.niagaracollege.ca/"><span>Niagara College Canada</span></a>
+		</div>
+	</div>
+	
+	<div class="uploader_window">
+
+		<div id="ncUIForm">
+
+			<h1>Video Streaming Service</h1>
+
+			<fieldset>
+				<legend>Welcome</legend>
+				
+				<p>Welcome to the Niagara College Video Streaming Service. Select the button below to connect to the service with your College username and password and upload and manage your videos.</p>
+					
+				<p>
+				<form action="Upload/" method="GET">
+					<input type="submit" value="Upload/Manage Videos">
+				</form>
+				</p>
+			</fieldset>
+		  
+		</div>
+		
+	</div>
+
+	<center>
+		<div class="player_window">
+			<video id="niagaraPlayer" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="770" height="457" poster="images/CentredLogo770.png" data-setup='{}' oncontextmenu="return false;">
+				<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+			</video>
+		</div>	
+	</center>
+	
+</body>
+</html>
