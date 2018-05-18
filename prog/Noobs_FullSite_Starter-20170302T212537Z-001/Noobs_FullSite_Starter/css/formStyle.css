@@ -1,0 +1,29 @@
+.table
+{
+display: table;
+border-collapse: separate;
+ border-spacing: 1px;
+}
+.title
+{
+display: table-caption;
+text-align: center;
+font-weight: bold;
+font-size: larger;
+}
+.heading
+{
+display: table-row;
+font-weight: bold;
+text-align: center;
+}
+.row
+{
+display: table-row;
+}
+.cell
+{
+display: table-cell;
+border-width: thin;
+padding: 5px;
+}

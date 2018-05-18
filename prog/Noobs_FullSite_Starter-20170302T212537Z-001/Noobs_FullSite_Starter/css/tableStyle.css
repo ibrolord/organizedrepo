@@ -1,0 +1,57 @@
+.table
+{
+	display: table;
+}
+.title
+{
+	display: table-caption;
+	text-align: center;
+	font-weight: bold;
+	font-size: larger;
+}
+.heading
+{
+	display: table-row;
+	font-weight: bold;
+	text-align: center;
+	background: #A4A4A4;
+}
+.row
+{
+	display: table-row;
+}
+.cell
+{
+	display: table-cell;
+	border: solid;
+	border-width: thin;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.row:nth-child(even)
+{ 
+	background: #C0C0C0;
+}
+.row:nth-child(odd) 
+{ 
+	background: #E0E0E0; 
+}
+
+a:link {
+    color: #1f1f1f;
+}
+
+/* visited link */
+a:visited {
+    color: #1f1f1f;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
